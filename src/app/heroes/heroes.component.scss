@@ -1,3 +1,10 @@
 .hero-card {
     margin: 10px;
+    text-decoration: none;
+}
+a.no-underline {
+    text-decoration: none;
+}
+.selected {
+    background-color: blue
 }
