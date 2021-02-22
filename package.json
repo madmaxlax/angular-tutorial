@@ -8,7 +8,8 @@
     "test": "ng test",
     "nglint": "ng lint",
     "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "APP_BASE_HREF='angular-tutorial/' ng build --prod && gh-pages -d dist/ng-tutorial/"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +41,7 @@
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "gh-pages": "^3.1.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.1.0",
