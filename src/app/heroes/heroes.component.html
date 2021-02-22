@@ -1,20 +1,29 @@
 <div fxLayout="row wrap">
+    <div>
+        <label>Hero name:
+            <input #heroName />
+        </label>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button mat-raised-button color="primary" (click)="add(heroName.value); heroName.value=''">
+            add
+        </button>
+    </div>
     <div *ngFor="let hero of heroes" fxFlex="25">
-        <a routerLink="/detail/{{hero.id}}" class="no-underline">
-            <mat-card class="hero-card" [class.selected]="hero === selectedHero">
-                <mat-card-header>
+        <mat-card class="hero-card" [class.selected]="hero === selectedHero">
+            <mat-card-header>
+                <a routerLink="/detail/{{hero.id}}" class="no-underline">
                     <mat-card-title>
                         {{hero.name | uppercase}} Details
                     </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <div><span>id: </span>{{hero.id}}</div>
-                    <label>name:
-                        <input [(ngModel)]="hero.name" placeholder="name" />
-                    </label>
-                </mat-card-content>
-            </mat-card>
-        </a>
+                </a>
+            </mat-card-header>
+            <mat-card-content>
+                <div><span>id: </span>{{hero.id}}</div>
+                <div><span>name: </span>{{hero.name}}</div>
+                <button mat-raised-button color="accent" class="delete" title="delete hero"
+                    (click)="delete(hero)">x</button>
+            </mat-card-content>
+        </mat-card>
     </div>
 </div>
 <!-- <div *ngIf="selectedHero">

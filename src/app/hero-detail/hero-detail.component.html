@@ -10,6 +10,9 @@
             <label>name:
                 <input [(ngModel)]="hero.name" placeholder="name" />
             </label>
+            <button mat-raised-button color="accent" (click)="save()">save</button>
+            <button mat-raised-button (click)="goBack()">go back</button>
+
         </mat-card-content>
     </mat-card>
 </div>
