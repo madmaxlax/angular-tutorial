@@ -9,7 +9,7 @@
     "nglint": "ng lint",
     "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
     "e2e": "ng e2e",
-    "deploy": "APP_BASE_HREF='angular-tutorial/' ng build --prod && gh-pages -d dist/ng-tutorial/"
+    "deploy": "ng build --configuration=gh && gh-pages -d ./dist/"
   },
   "private": true,
   "dependencies": {
